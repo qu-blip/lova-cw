@@ -266,11 +266,20 @@
     }, 10);
   })(document.getElementById('pinkboard'));
 </script>
-<div class="namebox">
+<div  onclick="playAudio()">
+<div class="namebox" >
   <h1>QC&#10084;&#65039;CW</h1>
+<audio id="myAudio" src="music.mp3"></audio>
+ 
+<script>
+function playAudio() {
+    var audio = document.getElementById("myAudio");
+    audio.play().catch(error => {
+        console.log("自动播放失败:", error);
+    });
+}
+</script>
 </div>
-<audio autoplay loop hidden>
-        <source src="music.mp3" type="audio/mp3">
-            </audio>
+</div>
 </body>
 </html>
